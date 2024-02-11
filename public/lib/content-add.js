@@ -1,15 +1,3 @@
-function friendClear() {
-    $('friends').innerHTML = ''
-}
-
-function friendAdd(name, link) {
-    const element = document.createElement('a')
-    element.textContent = name
-    element.href = link
-    $('friends').appendChild(element)
-    $('friends').appendChild(document.createElement('br'))
-}
-
 function showArticlesByTag() {
     for (let article of document.getElementsByClassName('article')) {
         if (!window.tag) {
