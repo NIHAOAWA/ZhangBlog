@@ -29,6 +29,8 @@ async function init() {
     ctx.height = paper.height
     ctx.width = paper.width
 
+    ctx.transform(-1, 0, 0, 1, 0, paper.height)
+
     ctx.fillStyle = '#000000'
     ctx.fillRect(0, 0, paper.width, paper.height)
 
@@ -38,7 +40,7 @@ async function init() {
         const y = Math.random() * ctx.height
         ctx.fillRect(x, y, 5, 5)
 
-        friendsXY[friends[Object.keys(friends)[i]]] = [x, y]
+        friendsXY[Object.keys(friends)[i]] = [x, y]
     }
 
     paper.onclick = e => {
