@@ -22,7 +22,7 @@ async function init() {
     const ctx = paper.getContext('2d')
     const friends = await getFriends()
     const friendsXY = {}
-    for (let key of Object.keys(friends).keys) {
+    for (let key of Object.keys(friends)) {
         friendsXY[key] = []
     }
 
