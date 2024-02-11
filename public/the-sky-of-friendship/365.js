@@ -9,8 +9,8 @@ function getPaper() {
 
 function whichFriend(x, y, friendsXY) {
     for (let friend in friendsXY) {
-        const friendX = friendsXY[0]
-        const friendY = friendsXY[1]
+        const friendX = friendsXY[friend][0]
+        const friendY = friendsXY[friend][1]
 
         if (x >= friendX && x <= friendX + 5 && y >= friendY && y <= friendY + 5) return friend
     }
