@@ -45,7 +45,9 @@ async function init() {
     }
 
     paper.onclick = e => {
+        console.log('点击了')
         const result = whichFriend(e.clientX, e.clientY, friendsXY)
+        console.log(result)
         if (result === null) return e.preventDefault()
         const a = document.createElement('a')
         a.href = friends[result]
