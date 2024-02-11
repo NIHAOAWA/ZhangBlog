@@ -22,9 +22,6 @@ async function init() {
     const ctx = paper.getContext('2d')
     const friends = await getFriends()
     const friendsXY = {}
-    for (let key of Object.keys(friends)) {
-        friendsXY[key] = []
-    }
 
     paper.width = window.innerWidth
     paper.height = window.innerHeight
