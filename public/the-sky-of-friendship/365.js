@@ -44,9 +44,9 @@ async function init() {
     paper.onclick = e => {
         console.log('点击了')
         const cvsbox = paper.getBoundingClientRect()
-        const x = Math.round(x - cvsbox.left)
-        const y = Math.round(y - cvsbox.top)
-        const result = whichFriend(e.clientX, e.clientY, friendsXY)
+        const x = Math.round(e.clientX - cvsbox.left)
+        const y = Math.round(e.clientY - cvsbox.top)
+        const result = whichFriend(x, y, friendsXY)
         console.log(result)
         if (result === null) return e.preventDefault()
         const a = document.createElement('a')
