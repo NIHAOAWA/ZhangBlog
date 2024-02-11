@@ -29,8 +29,6 @@ async function init() {
     ctx.height = paper.height
     ctx.width = paper.width
 
-    ctx.transform(-1, 0, 0, 1, 0, paper.height)
-
     ctx.fillStyle = '#000000'
     ctx.fillRect(0, 0, paper.width, paper.height)
 
@@ -45,6 +43,9 @@ async function init() {
 
     paper.onclick = e => {
         console.log('点击了')
+        const cvsbox = paper.getBoundingClientRect()
+        const x = Math.round(x - cvsbox.left)
+        const y = Math.round(y - cvsbox.top)
         const result = whichFriend(e.clientX, e.clientY, friendsXY)
         console.log(result)
         if (result === null) return e.preventDefault()
